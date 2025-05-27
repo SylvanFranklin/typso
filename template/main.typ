@@ -9,11 +9,18 @@
 ]
 
 
+#let terms = (
+  "Ambrosia",
+  "Harpoon",
+  "Hammer",
+  "Octopus",
+)
+
 #let n = 5
 #let bingo-function(i) = {
-  set text(20pt)
+  // set text(20pt)
   align(center + horizon)[
-    #if i == calc.floor(n * n / 2) [Free] else [#(i + 1)]
+    #if i == calc.floor(n * n / 2) [Free] else [#terms.at(calc.rem(i, terms.len()))]
   ]
 }
 
